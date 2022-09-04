@@ -1,0 +1,165 @@
+<h1 class="NamCls">{{340 + 690}}</h1>
+<h1>{{340%12}}</h1>
+
+<h1>Hello {{NamVar}}</h1>
+<h1>After 5 years my Age will be {{AgeVar+5}}</h1>
+
+<h1 *ngIf="BulVar">Display me</h1>
+
+<h1 *ngIf="AgeVar > 18">You can Vote</h1>
+
+
+<h1 *ngIf="BulVar; then YopCodUid else NopCodUid"></h1>
+
+<ng-template #YopCodUid> Its True</ng-template>
+<ng-template #NopCodUid> Its false</ng-template>
+
+<h1 *ngIf="BulVar; then loginCodUid else regCodUid"></h1>
+
+<ng-template #loginCodUid> Login Form</ng-template>
+<ng-template #regCodUid> RegForm</ng-template>
+
+<ul>
+  <li *ngFor="let PlaceVar of TripAryPlace">{{PlaceVar}}</li><br>
+  <li *ngFor="let PlaceVar of TripAryPlace; let IdxVar = index">{{IdxVar + 1}}){{PlaceVar}}</li><br>
+  <li *ngFor="let PlaceVar of TripAryPlace | slice:2:4;let IdxVar = index ">{{IdxVar}}{{PlaceVar}}</li><br>
+  <li *ngFor="let PlaceVar of TripAryPlace.sort(SortPlaces)">{{PlaceVar}}</li><br>
+</ul>
+
+<ol>
+  <li *ngFor="let _ of [].constructor(3)">Hi</li>
+</ol>
+
+<ul>
+  <li *ngFor="let DreamVar of DreamAryVar">{{DreamVar.Name}}
+    <ol>
+      <li>{{DreamVar.Plan}}</li>
+      <li>{{DreamVar.Cost}}</li>
+      <li>{{DreamVar.Year}}</li>
+    </ol>
+  </li>
+</ul>
+
+<table border="5" cellpadding="10px">
+  <tr>
+    <th>Sl.No</th>
+    <th><a (click) = "SortByName()">Name</a></th>
+    <th><a (click) = "SortByPlan()">Plan</a></th>
+    <th><a (click) = "SortByCost()">Cost</a></th>
+    <th><a (click) = "SortByYear()">Year</a></th>
+  </tr>
+  <tr *ngFor="let DreamVar of DreamAryVar; let idxVar = index ">
+    <td>{{idxVar+1}}</td>
+    <td>{{DreamVar.Name}}</td>
+    <td>{{DreamVar.Plan}}</td>
+    <td>{{DreamVar.Cost}}</td>
+    <td>{{DreamVar.Year}}</td>
+
+  </tr>
+</table>
+
+
+<ng-container [ngSwitch]="ColorVar">
+  <div *ngSwitchCase="'Red'"> STOP</div>
+  <div *ngSwitchCase="'Green'"> GO</div>
+  <div *ngSwitchCase="'Yellow'"> Auto</div>
+  <div *ngSwitchCase="'Grey'"> Not WOrking</div>
+  <div *ngSwitchDefault> Donno</div>
+</ng-container>
+
+<button (click) = NamBtnFnc()>Dare to Click me!!</button>
+<button (dblclick) = NamDblBtnFnc()>Dare to Click me!!</button>
+
+
+<!-- <h1 [ngClass]="{RedCls:BulVar}">
+  Hi This is CSS
+</h1> -->
+<!-- 
+<h1 [ngClass]="{RedCls: ThemeVar == 'Red', BlueCls: ThemeVar == 'Blue'}">
+  Hi This is CSS
+</h1> -->
+
+<!-- <h1 [ngStyle]="{color: FgdClrVar, background: BgdClrVar}">
+ 
+  Hi This is CSS
+</h1> -->
+
+<!-- <h1 [ngStyle]="{color:StsVar=='Active'? 'Green':'Red'}">
+  User is <b *ngIf="StsVar != 'Active'">Not</b> Working
+</h1> -->
+
+
+<!-- Property Binding -->
+
+<!-- <p [ngClass]="{NamNgsCls: ChkVab}"> TstTxt </p> -->
+
+
+
+<!-- Event Binding -->
+
+<!-- <button (click)="NamNgsFnc()">Click Here</button> -->
+
+
+
+<!-- Two way Binding -->
+
+<!-- <input type="text" placeholder="Enter anything"
+
+  [(ngModel)]="NamIptVar">
+
+
+
+<h1> You r typing {{NamIptVar}}</h1>
+
+<img src="assets/imgfdr/ca" alt="" style="width: 500px;">
+
+
+<ol>
+  <li>Audio <button (click) = clicked()>play</button>
+   <p [ngclass]="{DsplySng:ChkVab}"> <audio  src="assets/AudFdr/audio.mp3 " ></audio></p></li>
+  
+  <li>Brand</li>
+  <li>Kannada</li>
+  <li>Patriotic</li>
+  <li>Piano</li>
+
+</ol> -->
+<!-- <ul>
+  <li><audio src="assets/AudFdr/audio.mp3 " controls ></audio></li>
+  <li><audio src="assets/AudFdr/Brand.mp3 " controls ></audio></li>
+  <li><audio src="assets/AudFdr/Kannada.mp3 " controls ></audio></li>
+  <li><audio src="assets/AudFdr/Patriotic.mp3 " controls ></audio></li>
+  <li><audio src="assets/AudFdr/Piono.mp3 " controls ></audio></li>
+</ul> -->
+<!-- <center>
+<h1>Selected Song : {{PlySngVar.slice(0,-4)}}</h1>
+<audio #AudNgsUid src="../assets/AudFdr/{{PlySngVar}}" controls></audio>
+<table cellpadding="10px">
+  <tr>
+    <th>Sl.No</th>
+    <th>Name</th>
+    <th>Play</th>
+  </tr>
+
+  <tr *ngFor="let SngVar of SngAryVar; let IdxVar = index">
+    <td>{{IdxVar+1}}</td>
+    <td>{{SngVar.slice(0,-4)}}</td>
+    <td><button (click) = "playSongFnc(IdxVar)" >Play</button></td>
+  </tr>
+
+</table>
+</center> -->
+<!-- <h1>Total Likes{{TtlLykVaf}}</h1>
+
+<news [topicVar] = "'Politics'"
+  [detailVar]="'Noidas supertech building is being demolished'"
+  (IncLykVaf) = "InclykVafFnc($event)"
+  (DecLykVaf) = "DeclykVafFnc($event)"></news>
+<news [topicVar] = "'Education'" 
+  [detailVar]="'Akash is the new Topper'"
+  (IncLykVaf) = "InclykVafFnc($event)"
+  (DecLykVaf) = "DeclykVafFnc($event)"></news>
+<news [topicVar] = "'Sports'" 
+  [detailVar]="'Ee Sala Cup Nammade'"
+  (IncLykVaf) = "InclykVafFnc($event)"
+  (DecLykVaf) = "DeclykVafFnc($event)"></news> -->

@@ -1,0 +1,39 @@
+
+<div class="DsplyFlxCls">
+    <div style="width: 40%;">
+        <h3>{{TtlVar}}
+            <!-- <a  (click) = "ToggleLike()" ><i [ngclass]="{ 'fa-regular fa-heart' : BulVar == true, 'fa-solid fa-heart' : BulVar == false }" style="color:red ; font-size: 25px;"></i></a> -->
+            <!-- <i class="{{iconClsName}}" (click)="iconClicked()" style="color: red; font-size:24px"></i> -->
+
+        </h3>
+
+        <p>{{DtlVar}}</p>
+    </div>
+
+    <div>
+        <a (click)="ToggleLike()">
+            <fa-icon [icon]="NamFasIknVar" style="color: red; font-size:24px"></fa-icon>
+        </a>
+    </div>
+
+    <div>
+
+        <button (click)="UpdQtyFnc(-1)">-</button>
+        <input type="number" placeholder={{QtyVar}} size="2" class="QtyIptCls" la>
+        <button (click)="UpdQtyFnc(1)">+</button>
+    </div>
+
+
+    <p>
+        <i class="fa-solid fa-cart-shopping" style="color:green ;font-size: 24px;"></i>
+        Unit Cost : &pound;{{CstVar}}
+    </p>
+
+    <p>
+        Total Cost : &pound;{{CstVar*QtyVar}}
+    </p>
+
+    <button (click)="RemoveFnc()">Remove</button>/ <button (click) = "UpdateFnc()">Update</button>
+</div>
+
+<hr>

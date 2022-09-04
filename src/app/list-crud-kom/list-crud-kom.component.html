@@ -1,0 +1,20 @@
+<h1>List CRUD</h1>
+
+
+<form >
+    <input id="AddNam" type="text" placeholder="Add Item" name="NamIptVav" 
+    [(ngModel)]="NamIptVar">
+    <button (click)="EditIdxvar == -1 ? AddBtnFnc() : UpdBtnFnc()">{{EditIdxvar == -1 ? 'Add' : 'Update'}}</button>
+    <button  (click)="SortAryFnc()" >Sort<fa-icon [icon]="NamFasIknVar" ></fa-icon></button>
+</form>
+
+
+<ol>
+    <li *ngFor="let Fruit of NamAryVar; let IdxVar=index" class="LiSupCls">
+        {{Fruit}}
+        <b class="LiBtnCls">
+            <button (click)="EdtBtnFnc(IdxVar)">[==]</button>&nbsp;
+            <button (click)="DltBtnFnc(IdxVar)">[x]</button>
+        </b>
+    </li>
+</ol>
