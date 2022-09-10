@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { NewsKomComponent } from './news-kom/news-kom.component';
@@ -44,7 +45,8 @@ const AppNavNryVar: Routes = [
     FormsModule,
     FontAwesomeModule,
     RouterModule.forRoot(AppNavNryVar),
-    NgbModule
+    NgbModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

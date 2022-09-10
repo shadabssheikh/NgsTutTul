@@ -1,4 +1,37 @@
-.SupPrdDivCls
+.SprPrdDivCls {
+
+    max-width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+
+
+    div {
+
+        border: 3px solid brown;
+
+        margin: 20px;
+
+        padding: 10px;
+
+        text-align: center;
+
+        border-radius: 20px;
+
+    }
+
+}
+
+.Search
 {
     display: flex;
+    justify-content: space-between;
+
+
 }

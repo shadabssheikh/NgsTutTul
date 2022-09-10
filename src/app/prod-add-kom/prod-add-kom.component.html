@@ -1,19 +1,19 @@
 <div class="modal-header">
-    <h3>Add Product</h3>
+    <h3>{{EdtIdxVar == -1 ? 'Add Product Form' : 'Update Product Form'}}</h3>
 </div>
 <div class="modal-body">
     <form>
 
-        Item<input  class="form-control" type="text" name="ProdName" id="ProdName" placeholder="Product Name" [(ngModel)]="AddProdVar.TtlVak"><br>
-        Detail<input  class="form-control" type="text" name="ProdDetail" id="ProdDetail" placeholder="Product Detail" [(ngModel)]="AddProdVar.DtlVak"><br>
-        Cost<input  class="form-control" type="number" name="ProdCost" id="ProdCost" placeholder="Product Cost"  [(ngModel)]="AddProdVar.CstVak"><br>
+        Item<input  class="form-control" type="text" name="ProdName" id="ProdName" placeholder="Product Name" [(ngModel)]="IniProdVar.TtlVak"><br>
+        Detail<input  class="form-control" type="text" name="ProdDetail" id="ProdDetail" placeholder="Product Detail" [(ngModel)]="IniProdVar.DtlVak"><br>
+        Cost<input  class="form-control" type="number" name="ProdCost" id="ProdCost" placeholder="Product Cost"  [(ngModel)]="IniProdVar.CstVak"><br>
     </form>
 </div>
 <div class="modal-footer">
     <button type="button" 
         class="btn btn-outline-dark" 
-        (click)="AddProdFnc()">
-        Add
+        (click)="EdtIdxVar == -1 ? AddProdFnc() : UpdProdFnc()">
+        {{EdtIdxVar == -1 ? 'Add' : 'Update'}}
     </button>
 </div>
 
